@@ -30,21 +30,16 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Hi! I'm Bryant, and I'm a software engineer."
+					tagline="I love learning about systems programming, computer architecture, and hardware design. I’m currently studying computer science at Cornell University and this past summer I interned at Palantir Technologies as a dev on the Foundry API & SDK team."
 					align="start"
 				>
-					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
-					</div>
 				</Hero>
 
 				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
-					width="480"
-					height="620"
+					alt="Bryant Park's CIS course staff portrait"
+					width="360"
+					height="360"
 					src="/assets/portrait.jpg"
 				/>
 			</header>
@@ -119,7 +114,7 @@ const projects = (await getCollection('work'))
 	}
 
 	.hero img {
-		aspect-ratio: 5 / 4;
+		aspect-ratio: 4 / 4;
 		object-fit: cover;
 		object-position: top;
 		border-radius: 1.5rem;
@@ -141,8 +136,8 @@ const projects = (await getCollection('work'))
 		}
 
 		.hero img {
-			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
+			aspect-ratio: 4 / 4;
+			border-radius: 99rem;
 			object-fit: cover;
 		}
 	}
