@@ -1,14 +1,14 @@
 ---
-title: Markdown Mystery Tour
-publishDate: 2020-03-02 00:00:00
-img: /assets/stock-1.jpg
-img_alt: Iridescent ripples of a bright blue and pink liquid
+title: IMDb
+github: https://github.com/CornellDataScience/imdb
+img: /assets/projects/imdb.jpg
+img_alt: Diagram of a Redis cluster
 description: |
-  We designed a whodunnit-style game to introduce Markdown formatting. Suspense — suspicion — syntax!
+  IMDb (in-memory database) is an implementation of the Redis protocol. I'm currently serving as a lead for this project in Cornell Data Science.
 tags:
-  - Design
-  - Dev
-  - User Testing
+  - Databases
+  - C++
+  - CDS
 ---
 
 ## Level-two heading
