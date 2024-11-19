@@ -35,6 +35,8 @@ const {
 	};
 	const isDark = getThemePreference() === 'dark';
 	document.documentElement.classList[isDark ? 'add' : 'remove']('theme-dark');
+	// disable dark theme
+	document.documentElement.classList['remove']('theme-dark');
 
 	if (typeof localStorage !== 'undefined') {
 		// Watch the document element and persist user preference when it changes.
