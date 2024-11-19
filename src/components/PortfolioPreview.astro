@@ -16,7 +16,7 @@ const { data, slug } = Astro.props.project;
 		<div class="stack gap-2">
 			<h1 class="title"><a href={data.github}>{data.title}</a></h1>
 			<div class="tags">
-				{data.tags.map(tag => <Pill>{tag}</Pill>)}
+				{data.tags.map((tag: string) => <Pill>{tag}</Pill>)}
 			</div>
 			{data.description && <p class="tagline">{data.description}</p>}
 		</div>
