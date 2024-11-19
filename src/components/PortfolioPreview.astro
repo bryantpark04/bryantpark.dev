@@ -9,24 +9,47 @@ interface Props {
 const { data, slug } = Astro.props.project;
 ---
 
-<div class='hero stack gap-4 start']}>
-	<div class="stack gap-2">
-		<h1 class="title">{data.title}</h1>
-		<div class="tags">
-			{data.tags.map(tag => <Pill>{tag}</Pill>)}
+
+<section>
+	<hr>
+	<div class='hero stack gap-4 start'>
+		<div class="stack gap-2">
+			<h1 class="title"><a href={data.github}>{data.title}</a></h1>
+			<div class="tags">
+				{data.tags.map(tag => <Pill>{tag}</Pill>)}
+			</div>
+			{data.description && <p class="tagline">{data.description}</p>}
 		</div>
-		{data.description && <p class="tagline">{data.description}</p>}
+		<slot />
+		<img
+			alt={data.img_alt}
+			width="400"
+			height="400"
+			src={data.img} />
 	</div>
-	<slot />
-</div>
+</section>
 
 <style>
+	a {
+		color:black;
+		text-decoration: none;
+
+	}
+
+	section {
+		margin: 2rem;
+	}
+
+	hr {
+		height: 1px;
+		margin-bottom: 3rem
+	}
+
 	.tags {
 		display: flex;
 		flex-direction: row;
 		gap: 0.5rem;
 	}
-
 
 	.hero {
 		font-size: var(--text-lg);
@@ -47,6 +70,9 @@ const { data, slug } = Astro.props.project;
 	@media (min-width: 50em) {
 		.hero {
 			font-size: var(--text-md);
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
 		}
 
 		.start {

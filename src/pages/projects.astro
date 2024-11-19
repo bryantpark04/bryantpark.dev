@@ -36,12 +36,7 @@ const projects = await getCollection('projects');
 				</Hero>
 			</header>
 				{
-					projects.map((project) => (
-						<section>
-							<hr>
-							<PortfolioPreview project={project} />			
-						</section>)
-					)
+					projects.map((project) => <PortfolioPreview project={project} />)
 				}
 		</main>
 	</div>
@@ -54,11 +49,6 @@ const projects = await getCollection('projects');
 		align-items: center;
 		justify-content: space-between;
 		gap: 2rem;
-	}
-
-	hr {
-		height: 1px;
-		margin-bottom: 3rem
 	}
 
 	.roles {
