@@ -7,6 +7,7 @@ import ContactCTA from '../../components/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
+import PortfolioPreview from '../../components/PortfolioPreview.astro';
 
 interface Props {
 	entry: CollectionEntry<'projects'>;
@@ -33,19 +34,21 @@ const { Content } = await entry.render();
 			<header>
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href="/projects/"><Icon icon="arrow-left" color="black"/> projects</a>
-					<Hero title={entry.data.title} align="start">
+
+					<PortfolioPreview project={entry} />
+					<!-- <Hero title={entry.data.title} align="start">
 						<div class="details">
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
 							<p class="description">{entry.data.description}</p>
 						</div>
-					</Hero>
+					</Hero> -->
 				</div>
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+					<!-- {entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />} -->
 					<div class="content">
 						<Content />
 					</div>
