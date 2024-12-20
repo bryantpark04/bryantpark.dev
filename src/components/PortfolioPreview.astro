@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import Pill from './Pill.astro';
+import Icon from './Icon.astro';
 
 interface Props {
 	project: CollectionEntry<'projects'>;
@@ -19,6 +20,7 @@ const { data } = Astro.props.project;
 				{data.tags.map((tag: string) => <Pill>{tag}</Pill>)}
 			</div>
 			{data.description && <p class="tagline">{data.description}</p>}
+			<a href={data.github}><Icon icon="github-logo" size='30px'/></a>
 		</div>
 		<slot />
 		<img
