@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 
 export const collections = {
-	work: defineCollection({
+	projects: defineCollection({
 		type: 'content',
 		schema: z.object({
 			title: z.string(),
@@ -10,7 +10,9 @@ export const collections = {
 			img: z.string(),
 			img_alt: z.string().optional(),
 			github: z.string(),
-			currently_building: z.boolean().optional()
+			currently_building: z.boolean().optional(),
+			abstraction_level: z.number(),
+			group_size: z.number()
 		}),
 	}),
 };

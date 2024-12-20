@@ -8,4 +8,6 @@ description: |
 tags:
   - Linux
   - C++
+abstraction_level: 1
+group_size: 2
 ---

@@ -1,0 +1,9 @@
+.plot-point {
+    transition: transform 0.1s ease-in-out;
+    transform-origin: center center;
+    transform-box: fill-box;
+}
+
+.plot-point:hover {
+    transform: scale(1.5);
+}

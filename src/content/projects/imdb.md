@@ -9,6 +9,9 @@ tags:
   - Databases
   - C++
   - CDS
+abstraction_level: 1
+group_size: 10
+currently_building: true
 ---
 
 ## Level-two heading

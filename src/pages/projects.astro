@@ -7,6 +7,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 // Component Imports
 import Hero from '../components/Hero.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
+import { ImagePlot } from '../components/ImagePlot';
 
 // Content Fetching: List four most recent work projects
 const projects = await getCollection('projects');
@@ -27,9 +28,11 @@ const projects = await getCollection('projects');
 				>
 				</Hero>
 			</header>
-				{
-					projects.map((project) => <PortfolioPreview project={project} />)
-				}
+			<div style="margin-left: 40px; margin-top: -80px;">
+				<ImagePlot width={800} height={500} points={projects.map(
+					project => ({...project, coords: {x: 800 * project.data.abstraction_level / 6, y: 400 * project.data.group_size / 11}, highlighted: project.data.currently_building})
+				)} axes={{x: 'Abstraction Level', y: 'Project Size'}} />
+			</div>
 		</main>
 	</div>
 </BaseLayout>

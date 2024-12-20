@@ -8,4 +8,6 @@ description: |
 tags:
   - Version Control
   - OCaml
+abstraction_level: 3
+group_size: 4
 ---
