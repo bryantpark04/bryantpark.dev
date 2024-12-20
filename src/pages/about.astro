@@ -5,17 +5,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Component Imports
-import CallToAction from '../components/CallToAction.astro';
-import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
 import { ImagePlot } from '../components/ImagePlot';
-
-// Page section components
-import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -37,7 +28,7 @@ const interests = (await getCollection('interests'))
 				>
 				</Hero>
 				<div style="padding-top: 120px">
-					<ImagePlot section="interests" width={480} height={480} points={interests} fontSize={90} />
+					<ImagePlot section="interests" width={480} height={480} points={interests} fontSize={90} axes=undefined />
 				</div>
 			</header>
 		</div>

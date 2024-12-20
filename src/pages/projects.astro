@@ -6,7 +6,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Component Imports
 import Hero from '../components/Hero.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
 import { ImagePlot } from '../components/ImagePlot';
 
 const projects = (await getCollection('projects')).filter(proj => proj.data.abstraction_level != undefined);

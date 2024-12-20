@@ -1,25 +1,4 @@
-import React, { useState } from 'react';
-
 import '../styles/image_plot.css'
-
-const BlueDot = ({ size = 50 }) => (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} xmlns="http://www.w3.org/2000/svg">
-        <circle cx={size / 2} cy={size / 2} r={size / 2} fill="blue" />
-    </svg>
-  );
-  
-const BlueRing = ({ size = 50 }) => (
-<svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} xmlns="http://www.w3.org/2000/svg">
-    <circle 
-        cx={size / 2} 
-        cy={size / 2} 
-        r={(size / 2) - 5} 
-        stroke="blue" 
-        strokeWidth="5" 
-        fill="none" 
-    />
-</svg>
-);
 
 export const ImagePlot = ({ width, height, points, section, axes, fontSize = 12 }) => {
   // Axis properties
