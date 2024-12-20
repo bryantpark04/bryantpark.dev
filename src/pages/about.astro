@@ -11,6 +11,7 @@ import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
+import { ImagePlot } from '../components/ImagePlot';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
@@ -18,11 +19,15 @@ import Skills from '../components/Skills.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
+
+
+const interests = (await getCollection('interests'))
+	.map(interest => ({...interest, title: interest.data.emoji, coords: interest.data.coords}));
 ---
 
 <BaseLayout title="About Me | Bryant Park" description="About Bryant Park">
 	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
+		<div class="wrapper stack gap-8 lg:gap-20" style="margin-top: -120px;">
 			<header class="hero">
 				<Hero
 					title="Hi! I'm Bryant."
@@ -31,13 +36,9 @@ import Skills from '../components/Skills.astro';
 					align="start"
 				>
 				</Hero>
-
-				<img
-					alt="Bryant Park's CIS course staff portrait"
-					width="480"
-					height="480"
-					src="/assets/temp-emoji.png"
-				/>
+				<div style="padding-top: 120px">
+					<ImagePlot section="interests" width={480} height={480} points={interests} fontSize={90} />
+				</div>
 			</header>
 		</div>
 	</div>

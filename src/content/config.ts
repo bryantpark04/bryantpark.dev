@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import { glob, file } from 'astro/loaders';
 
 export const collections = {
 	projects: defineCollection({
@@ -15,4 +16,15 @@ export const collections = {
 			group_size: z.number()
 		}),
 	}),
+	interests: defineCollection({
+		type: 'content',
+		schema: z.object({
+			title: z.string(),
+			emoji: z.string(),
+			coords: z.object({
+				x: z.number(),
+				y: z.number()
+			})
+		}),
+	})
 };

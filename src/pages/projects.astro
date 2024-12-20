@@ -9,8 +9,7 @@ import Hero from '../components/Hero.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import { ImagePlot } from '../components/ImagePlot';
 
-// Content Fetching: List four most recent work projects
-const projects = await getCollection('projects');
+const projects = (await getCollection('projects')).filter(proj => proj.data.abstraction_level != undefined);
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -29,8 +28,8 @@ const projects = await getCollection('projects');
 				</Hero>
 			</header>
 			<div style="margin-left: 40px; margin-top: -80px;">
-				<ImagePlot width={800} height={500} points={projects.map(
-					project => ({...project, coords: {x: 800 * project.data.abstraction_level / 6, y: 400 * project.data.group_size / 11}, highlighted: project.data.currently_building})
+				<ImagePlot width={800} height={400} section="projects" points={projects.map(
+					project => ({...project, title: project.data.title, coords: {x: 800 * project.data.abstraction_level / 6, y: 300 * project.data.group_size / 11}, highlighted: project.data.currently_building})
 				)} axes={{x: 'Abstraction Level', y: 'Project Size'}} />
 			</div>
 		</main>

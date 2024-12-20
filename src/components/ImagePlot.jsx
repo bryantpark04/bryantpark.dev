@@ -21,7 +21,7 @@ const BlueRing = ({ size = 50 }) => (
 </svg>
 );
 
-export const ImagePlot = ({ width, height, points, axes }) => {
+export const ImagePlot = ({ width, height, points, section, axes, fontSize = 12 }) => {
   // Axis properties
   const axisPadding = 40; // Padding for axis labels and lines
 
@@ -70,22 +70,22 @@ export const ImagePlot = ({ width, height, points, axes }) => {
 
         {/* Render Points */}
         {points.map((point, index) => (
-            <a key={index} className="plot-point" href={`/projects/${point.slug}`}>
-                <image
+            <a key={index} className="plot-point" href={`/${section}/${point.slug}`}>
+                (point.data.img && <image
                     href={point.data.img}
                     x={axisPadding + point.coords.x} // Offset by axisPadding
                     y={height - axisPadding - point.coords.y} // Adjust for SVG's inverted Y-axis
                     width={point.data.width || 30}
                     height={point.data.height || 30}
-                />
+                />)
                 <text
                     x={axisPadding + point.coords.x + (point.data.width || 30) / 2} // Center the label above the image
                     y={height - axisPadding - point.coords.y - 5} // Place label slightly above the image
                     textAnchor="middle"
-                    fontSize="12"
+                    fontSize={fontSize}
                     fill="black"
                 >
-                    {point.data.title || `Point ${index + 1}`}
+                    {point.title || `Point ${index + 1}`}
                 </text>
             </a>
         ))}
