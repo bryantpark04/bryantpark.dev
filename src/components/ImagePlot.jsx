@@ -8,7 +8,7 @@ export const ImagePlot = ({ width, height, points, section, axes, fontSize = 12 
     <div>
       <svg width={width} height={height}>
         {/* Render Axes */}
-        {axes && (
+        {axes && axes.x && (
           <>
             {/* X-Axis */}
             <line
